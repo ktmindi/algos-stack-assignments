@@ -29,11 +29,30 @@ class SLL {
         return this.head;
     }
     front() {
-        return this.head.data;
+        if (this.head == null) {
+            return null;
+        } else {
+            return this.head.data;
+        }
+
+    }
+    display() {
+        var listStr = "";
+        if (this.head == null) {
+            return "";
+        }
+        listStr += this.head.value;
+        var runner = this.head.next;
+        while (runner != null) {
+            listStr += ", " + runner.value;
+            runner = runner.next;
+        }
+        return listStr
     }
 
-
 }
+
+
 SLL1 = new SLL();
 console.log(SLL1.addFront(18));
 console.log(SLL1.addFront(5));
@@ -45,3 +64,4 @@ console.log(SLL1.removeFront());
 
 console.log("Front Portion______________");
 console.log(SLL1.front());
+console.log(SLL1.display());
