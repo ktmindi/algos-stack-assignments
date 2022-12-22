@@ -86,17 +86,29 @@ leapYear(2000);
 leapYear(1900);
 //By adding in return to the function.. we dont need to console log when we call the function. by leaving it as is for the birthday function, you will notice that the terminal returns "Undefined" after each test
 
+
 //Print and Count
 //Print all integer multiples of 5, from 512 to 4096. Afterward, also log how many there were.
-
+let count = 0
+for (let i = 512; i < 4096; i++) {
+    if (i % 5 === 0) {
+        console.log(i)
+        count++
+    }
+}
+console.log(count)
+//the i variable only exists inside the loop so its okay to use it in other places in this js file without worrying about variable names
  
 
 //Multiples of Six
 
 //Print multiples of 6 up to 60,000, using a WHILE.
-
+var sixx = 6;
+    while (sixx <= 60000){
+        if(sixx%6==0)
+    console.log(sixx);
+}
  
-
 //Counting, the Dojo Way
 
 //Print integers 1 to 100. If divisible by 5, print "Coding" instead. If by 10, also print " Dojo".
