@@ -71,3 +71,33 @@ function stringCascade(word){
 
 //Test Case
 stringCascade("racecar")
+
+
+//Challenge 7
+function findInOrderedSet(arr, target, left=0, right=arr.length-1) {
+	if (left>right){
+    return false
+  }
+  let middleIndex = Math.floor((left+right)/2)
+  if (target === arr[middleIndex]){
+    return true
+  }
+  else if(target<arr[middleIndex]){
+    return findInOrderedSet(arr,target,left,middleIndex-1)
+  }
+  return findInOrderedSet(arr, target,middleIndex+1,right)
+  //think of base case if array is empty return false
+  
+  //find middle index of array
+  
+  //check if target is strictly equal to the middle index
+  
+  //check if target is in the first half of array
+  
+  //check if target is in the right half of the array
+  
+}
+
+const nums = [1, 4, 6, 7, 9, 17, 45];
+console.log(findInOrderedSet(nums, 4));  //-> true
+console.log(findInOrderedSet(nums, 2));  //-> false
