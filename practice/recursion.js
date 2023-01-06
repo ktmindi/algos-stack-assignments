@@ -117,3 +117,39 @@ function countWaysToReachNthStair(n) {
 console.log(countWaysToReachNthStair(1)) //-> 1 (only one way to climb 1 stair)
 console.log(countWaysToReachNthStair(2)) //-> 2 ((1, 1), (2))
 console.log(countWaysToReachNthStair(4)) //-> 5 ((1, 1, 1, 1), (1, 1, 2), (2, 1, 1), (2, 2))
+
+
+
+//Challenge 9
+const getPermutations = (arr) => {
+    //Base Case: If empty array 
+    if (arr.length === 0) {
+        return [ [] ];
+    }
+    //Get first element and rest of elements into variables 
+    const firstElement = arr[ 0 ];
+    const rest = arr.slice(1);
+
+    const permsWithoutFirst = getPermutations(rest);
+
+    const allPermutations = [];
+
+    permsWithoutFirst.forEach(perm => {
+        for (let i = 0; i <= perm.length; i++) {
+            const permsWithFirst = [ ...perm.slice(0, i), firstElement, ...perm.slice(i) ];
+            allPermutations.push(permsWithFirst);
+        }
+    })
+    return allPermutations;
+}
+
+console.log(getPermutations([1, 2])) //-> [[1, 2], [2, 1]]
+console.log(getPermutations([1, 2, 3])) //-> [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+let exampleArr = [ 'a', 'b', 'c', 'd', 'e' ]
+let i = 2; // 'c' is index 2 
+console.log(exampleArr.slice(0, i))         //* ['a','b']
+console.log(exampleArr.slice(i))            //* ['c','d','e']
+
+let test = [ ...exampleArr.slice(0, i), "kenny", ...exampleArr.slice(i) ];
+console.log(test)
