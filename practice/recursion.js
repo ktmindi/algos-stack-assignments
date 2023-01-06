@@ -44,3 +44,30 @@ function palindrome(string) {
 console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
 console.log(palindrome("llama mall")); //-> true
 console.log(palindrome("jmoney")); //-> false
+
+
+
+//cascading function
+function cascade(number) {
+  if(number > 9){
+		let newNumber = Math.floor(number/10);
+    console.log(number);
+    cascade(newNumber);
+  }
+  console.log(number);
+}
+
+cascade(111);
+cascade(12345);
+
+function stringCascade(word){
+  if(word.length >1){
+    let newWord = word.slice(0,-1);
+    console.log(word);
+    stringCascade(newWord)
+  }
+  console.log(word)
+}
+
+//Test Case
+stringCascade("racecar")
