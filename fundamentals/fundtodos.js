@@ -103,16 +103,24 @@ console.log(count)
 //Multiples of Six
 
 //Print multiples of 6 up to 60,000, using a WHILE.
-var sixx = 6;
-    while (sixx <= 60000){
-        if(sixx%6==0)
-    console.log(sixx);
-}
+//var sixx = 6;
+//    while (sixx <= 60000){
+//        if(sixx%6==0)
+//    console.log(sixx);
+//}
  
 //Counting, the Dojo Way
 
 //Print integers 1 to 100. If divisible by 5, print "Coding" instead. If by 10, also print " Dojo".
-
+for (let i=1; i<=100; i++){
+    if(i%5===0 && i%2===0){
+        console.log("Dojo");
+    }else if(i%5===0){
+        console.log("Coding");
+    }else{
+        console.log(i);
+    }
+}
  
 
 //What Do You Know?

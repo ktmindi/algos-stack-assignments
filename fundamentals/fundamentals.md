@@ -185,11 +185,24 @@ console.log("We are done. Goodbye world!");
     - With both, once they run, any subsequent code within the loop is skipped.
 
 
+# Parameters
+- When you call a function you will pass in arguments
+- When you declare or write a function you will declare what parameters the function will take
+*javascript does not care where you place the curly brackets as long as they are present - braces are a way to indicate to the system some number of lines of code that it should treat as a single group*
+*IF..ELSE and WHILE and FOR statements will only operate on a single line of code.*
 
 
 
+# VAR - CONST - LET
+- var can be reassigned and updated whereas let can only be updated. if you use var and you have thousands of lines of code and you re-use a variable name that already exists then javascript will not give you an error and will proceed to reassign the variable name to the value you provide it
 
+console.log(favoriteColor)
+var favoriteColor = green       this will not give us an error but undefined 
 
+console.log(secondColor)        this will give us an error because javascript will say there is no variable named *cannot access before initialization* secondColor
+let secondColor = red           
+
+https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/
 
 ### H3
 ## H2
