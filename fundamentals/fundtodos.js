@@ -103,11 +103,12 @@ console.log(count)
 //Multiples of Six
 
 //Print multiples of 6 up to 60,000, using a WHILE.
-//var sixx = 6;
-//    while (sixx <= 60000){
-//        if(sixx%6==0)
-//    console.log(sixx);
-//}
+let i=6;
+while (i<= 60000){
+ if(i%2===0 && i%3===0){
+   console.log(i);
+   i = i + 1;
+}}
  
 //Counting, the Dojo Way
 
@@ -126,22 +127,72 @@ for (let i=1; i<=100; i++){
 //What Do You Know?
 //Your function will be given an input parameter incoming. Please console.log this value.
 
- 
+function logIncoming(incoming){
+    console.log(incoming);
+}
+logIncoming("incoming");
+logIncoming(123);
 
 //Whoa, That Sucker’s Huge…
 //Add odd integers from -300,000 to 300,000, and console.log the final sum. Is there a shortcut?
+function addOddIntegers(){
+    let sum = 0;
+    for (let i = -300000; i <= 300000; i++){
+        if (i%2 !==0){
+            sum += i;
+        }
+    }
+    console.log(sum)
+}
 
- 
+addOddIntegers();
 
 //Countdown by Fours
 //Log positive numbers starting at 2016, counting down by fours (exclude 0), without a FOR loop.
+function countdownByFour() {
+    let num = 2016;
+    while (num>0){
+        console.log(num);
+        num -= 4;
+    }
+}
 
- 
+countdownByFour();
 
 //Flexible Countdown
 //Based on earlier “Countdown by Fours”, given lowNum, highNum, mult, print multiples of mult from highNum down to lowNum, using a FOR. For (2,9,3), print 9 6 3 (on successive lines).
-
- 
+function flexibleCount(lowNum,highNum,mult){
+    for (let i = highNum; i>= lowNum; i--){
+        if (i%mult == 0){
+            console.log(i);
+        }
+    }
+}
+console.log(flexibleCount(2,9,3))
 
 //The Final Countdown
 //This is based on “Flexible Countdown”. The parameter names are not as helpful, but the problem is essentially identical; don’t be thrown off! Given 4 parameters (param1,param2,param3,param4), print the multiples of param1, starting at param2 and extending to param3. One exception: if a multiple is equal to param4, then skip (don’t print) it. Do this using a WHILE. Given (3,5,17,9), print 6,12,15 (which are all of the multiples of 3 between 5 and 17, and excluding the value 9).
+
+
+function multiples(param1, param2, param3, param4) {
+    //*START iteration at param2
+    let i = param2;
+    //*STOP iteration at param3 
+    while (i <= param3) {
+        //* DON'T include param4 and if number/param1 has a 0 Remainder (multiple)
+        if (i !== param4) {
+            if (i % param1 === 0) {
+            console.log(i)
+            }
+        }
+        //*Still inside while loop, increment i for each iteration of this while loop 
+        i++;
+    }
+}
+
+// TODO: Print multipels of param1 so anything num % param1 === 0 is a multiple 
+//TODO: Start iteration at param2 and stopping at param3 
+//TODO: Don't print param 4
+
+
+multiples(3, 5, 17, 9);
