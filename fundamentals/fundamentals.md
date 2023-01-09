@@ -204,6 +204,14 @@ let secondColor = red
 
 https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/
 
+
+
+
+# Return Values
+- A value that is returned to the caller when the function finishes executing
+- Not all functions have return values, and looking at the source code you might think that not all functions have a return statement. However, they indeed do, because if there is nothing stated, an implicit return is added automatically at the end of the function.
+
+
 ### H3
 ## H2
 # H1
