@@ -5,17 +5,27 @@
 // Countdown
 
 // Create a function that accepts a number as an input. Return a new array that counts down by one, from the number (as array’s ‘zeroth’ element) down to 0 (as the last element). How long is this array?
-function num(input){
-    let newArr = []
-    
-}
- 
+function countDown(start){
+    let result = [];
+    for (let i = start; i>=0; i--){
+        result.push(i);
+    }
+    return result;
+} 
+let countArray = countDown(8);
+console.log(countArray);
+console.log(countArray.length);
+
 
 // Print and Return
 
 // Your function will receive an array with two numbers. Print the first value, and return the second.
-
+function printReturn(arr){
+    console.log(arr[0]);
+    return arr[1];
+}
  
+printReturn([1,2]);
 
 // First Plus Length
 
