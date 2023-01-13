@@ -196,3 +196,9 @@ console.log("Fahrenheit", testCase1)
 
 // (Optional): Do Fahrenheit and Celsius values equate at a certain number? The scientific calculation can be complex, so for this challenge just try a series of Celsius integer values starting at 200, going downward (descending), checking whether it is equal to the corresponding Fahrenheit value.
 
+for (let c = 200; c >= -200; c--) {
+    let f = (9/5) * c + 32;
+    if (c == (f - 32) * (5/9)) {
+        console.log(c + "°C is equal to " + f + "°F");
+    }
+}
