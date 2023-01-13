@@ -30,8 +30,18 @@ printReturn([1,2]);
 // First Plus Length
 
 // Given an array, return the sum of the first value in the array, plus the array’s length. What happens if the array’s first value is not a number, but a string (like "what?") or a boolean (like false).
-
+function firstPlusLength(arr) {
+    if (typeof arr[0] != 'number') {
+    arr[0] = 0 + arr.length;
+    } else {
+    arr[0] = arr[0] + arr.length;
+    }
+    console.log(arr[0]);
+    return arr;
+    }
  
+firstPlusLength([true,4,5,6,7]); 
+firstPlusLength([10,4,5,6,7]); 
 
 // Values Greater than Second
 
@@ -42,6 +52,22 @@ printReturn([1,2]);
 // Values Greater than Second, Generalized
 
 // Write a function that accepts any array, and returns a new array with the array values that are greater than its 2nd value. Print how many values this is. What will you do if the array is only one element long?
+// function greaterThanSecond(arr) {
+//     var newArr = [];
+//     if (arr.length == 0) {
+//         console.log(“The array is empty”);
+//     } else if (arr.length == 1) {
+//         console.log(“There is only 1 element”);
+//     } else {
+//     for (var i = 0; i arr[1]) {
+//     newArr.push(arr[i]);
+//     }
+//     }
+//     }
+//     console.log(newArr);
+//     return newArr;
+//     }
+
 
  
 
