@@ -32,7 +32,7 @@ These ideas are pretty universal but each language has their own way of displayi
 > A variable is a specific spot in memory with a label you provide
 
 ```JAVASCRIPT
-var myName = 'Kieu';
+let myName = 'Kieu';
 console.log(myName);
 ```
 > **Number** can store a huge range of numerical values from extremely large values to microscopically small ones, to incredibly negative values as well. If you know other programming languages, you might be accustomed to making a distinction between integers and floating-point numbers – JavaScript makes no such distinction.
