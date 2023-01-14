@@ -90,9 +90,13 @@ console.log(num4)
 ```
 
 
-
-
-
+### Type Coercion
+- We can't add a string value and a number value together; instead, JavaScript "coerces" (changes) the number into a string and treats the + operator as an instruction to concatenate strings.
+```
+console.log("10" + "5"); // 105
+console.log("10" + 5); // 105
+console.log(10 + 5); // 15
+```
 
 
 ### H3

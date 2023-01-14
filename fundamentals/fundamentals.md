@@ -17,6 +17,8 @@ All these sequences of instructions, written in programming languages like JavaS
 
 Computers executes *(runs)* machine code that was built *(translated)* from some piece of source code: code that was written by a software engineer.
 
+
+
 # Code Flow
 >**LOOP** allows you to instruct to computer to execute the same section of the code multiple times
 
@@ -24,6 +26,8 @@ Computers executes *(runs)* machine code that was built *(translated)* from some
 >**IF-ELSE STATEMENT** (or a conditional) allows you to have the computer jump to a different section of your code based on whether a certain condition is true or false
 
 >**FUNCTION** used for code that you expect to use often, which we assign a name and can be called on directly
+
+
 
 # Variables and Data Types 
 These ideas are pretty universal but each language has their own way of displaying or executing these different things, for our purposes we will be using javascript as our language.
@@ -41,32 +45,10 @@ console.log(myName);
 
 > **Boolean** has only two possible values: true and false. You can think of a Boolean like a traditional light switch, or perhaps a yes/no question on a test. Just as a light switch can be either on or  off, and just as a yes/no question can be answered with either yes or no, likewise a Boolean must have a value of either true or false – there is nothing in-between.
 
-### Booleans
-- Are useful for determining whether or not blocks of code should be executed
-- They are also the default result for many evaluations
-- Extremely useful when dealing with conditional statements
-```
-let likesJavaScript = true;
-let likesMath = false;
-
-const numToCheck = 10;
-console.log(numToCheck === 10) // => true
-```
-- Another example of booleans
-```
-let iHaveChanged = false;
-
-// ADD CODE BELOW
-iHaveChanged = true;
-console.log(iHaveChanged);
-
-let iLoveCoding = true;
-console.log(iLoveCoding);
-
-let codingIsTooHard = false;
-console.log(codingIsTooHard);
-```
-
+# BEST PRACTICE FOR JAVASCRIPT
+- Always end the line of code with a semicolon ";" including console.logs
+- The semicolon is a way of signaling that the statement is compelete
+- Keeping the code consistent is important when working in groups - making it easier to follow along
 
 # Equal Signs 
 ### **X=Y**
@@ -90,6 +72,37 @@ console.log(codingIsTooHard);
 >>`Both == and === return a boolean value of true or false`
 
 
+
+# typeof Operator
+- This operator is used to look up what the specific data type of a given operand is. 
+- In JavaScript, the typeof operator returns the data type of its operand in the form of a string. 
+- Operand can be any object, function or variable
+```
+typeof("testing")   // => "string"
+typeof(22)         // => "number"
+typeof(false)      // => "boolean"
+```
+- Keep in mind that the typeof an array is an object.
+```
+const favMovie = "Star Wars: Episod IV";
+const timesSeen = 732;
+const goingToWatchItAgain = true; 
+
+// ADD CODE BELOW HERE
+console.log(typeof(favMovie));
+console.log(typeof(timesSeen));
+console.log(typeof(goingToWatchItAgain));
+
+let favMovieType = typeof(favMovie);
+let timesSeenType = typeof(timesSeen);
+let seeAgainType = typeof(goingToWatchItAgain);
+
+console.log(favMovieType);
+console.log(timesSeenType);
+console.log(seeAgainType);
+```
+
+
 # Functions
 When we declare or create a function it will look like this
 ```JAVASCRIPT  
@@ -104,6 +117,7 @@ function nameOfFunction(){
 nameOfFunction();
 ```
 - This is how we will call or run or execute the function
+
 
 
 # Conditionals
@@ -127,9 +141,10 @@ else
 
 ```
 
-# Chaining and Nesting
 
-When would you walk/ fly /swim?
+
+# Chaining and Nesting
+- When would you walk/ fly /swim?
 ```JAVASCRIPT
 if(weather != "rainy")
 {
@@ -150,6 +165,7 @@ else
 - If the weather is not rainy you will walk to the game if the distance to the stadium is less than 3
 - if the weather is not rainy you will fly to the game if the distance to the stadium is more than 3
 - If the weather is rainy then you will swim
+
 
 
 # Loops
