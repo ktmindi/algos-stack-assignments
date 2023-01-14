@@ -38,14 +38,51 @@
     const welcomeStatement = first+" "+second+" "+third;
 
 
+### Template Literal 
+- console.log(`10 + 25 = ${10 + 25}`) // => "10 + 25 = 35"
+- By writing 10+25 inside ${} we can execute that code inside the string 
+- In order to do this we HAVE TO use BACKTICKS or it will not work
 
 
+### String Properties and Methods
+- To find the length of a string we can add .length to any string
+    - myString.length
+- Two common string methods are toUpperCase and toLowerCase to use these methods we have to include () at the end of the method name
+    - favArtist.toUpperCase()
+- Example
+```
+let hometown = "New York City";
+let favAlbum = "The Rise and Fall of Ziggy Stardust and the Spiders From Mars"
 
+// ADD CODE BELOW
+let count = hometown.length;
+let upper = favAlbum.toUpperCase()
+let lower = favAlbum.toLowerCase()
 
+// Uncomment the line below to check your work!
+console.log(count);
+console.log(upper);
+console.log(lower);
+```
 
+### Bracket Notation for Strings
+- to access a specific character in a string we can add brackets [] to the end of our string and place the index of the character inbetween the brackets
+```
+const songTitle = "Space Oddity"
+const lyrics = "This is Ground Control to Major Tom / You’ve really made the grade"
 
+// ADD CODE BELOW
 
+let firstLetter = songTitle[0];
+let seventhLetter = songTitle[6];
+let lastLetter = lyrics[lyrics.length-1];
 
+// Uncomment the line below to check your work!
+console.log(firstLetter);
+console.log(seventhLetter);
+console.log(lastLetter);
+```
+- Remember that we start our Index with 0 
 
 
 ### H3

@@ -41,6 +41,33 @@ console.log(myName);
 
 > **Boolean** has only two possible values: true and false. You can think of a Boolean like a traditional light switch, or perhaps a yes/no question on a test. Just as a light switch can be either on or  off, and just as a yes/no question can be answered with either yes or no, likewise a Boolean must have a value of either true or false – there is nothing in-between.
 
+### Booleans
+- Are useful for determining whether or not blocks of code should be executed
+- They are also the default result for many evaluations
+- Extremely useful when dealing with conditional statements
+```
+let likesJavaScript = true;
+let likesMath = false;
+
+const numToCheck = 10;
+console.log(numToCheck === 10) // => true
+```
+- Another example of booleans
+```
+let iHaveChanged = false;
+
+// ADD CODE BELOW
+iHaveChanged = true;
+console.log(iHaveChanged);
+
+let iLoveCoding = true;
+console.log(iLoveCoding);
+
+let codingIsTooHard = false;
+console.log(codingIsTooHard);
+```
+
+
 # Equal Signs 
 ### **X=Y**
 - set the value of x equal to y
