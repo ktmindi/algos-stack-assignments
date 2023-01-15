@@ -207,6 +207,101 @@ for (let i=0; i<timesTenIfOverFive.length; i++){
 console.log(timesTenIfOverFive); // -> should print [230, 90, 110, 2, 100, 60]
 ```
 
+## Objects - Examining Properties
+- Objects are data structures used to store related data represented with **keys** and associated **values**
+- Keys are also referred to as **properties**. 
+- Keys give us an easy way to reference the values, so they are almost always descriptive strings. 
+- Values can be any valid data type: a number, string, array, and other objects
+
+### FOR...IN
+> Do not use for in over an Array **if the index order is important** [In this instance its better to use a **for** loop, a **for of** loop, or **Array.forEach()** when order is important]
+- The for in statement can loop over array values
+```JAVASCRIPT
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+for (let x in numbers) {
+  txt += numbers[x] + ",";
+}
+console.log(txt); // => 45,4,9,16,25
+```
+- The javascript for in statement loops through the properties of an object
+``` JAVASCRIPT
+const person = {fname:"John", lname:"Doe", age:25}; 
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " "; //adding the value at index x of person to the txt string
+}
+console.log(txt); // => John Doe 25
+```
+```JAVASCRIPT
+//Another way to look at the code above for more clarification
+const person = {fname:"John", lname:"Doe", age:25}; 
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " ";
+  console.log("x", x); //console.log x will give us the KEY values: fname, lname, age
+  console.log("person[x]", person[x]); //console.log [x] will give us the values associated with the KEY at index x: John, Doe, 25
+}
+console.log(txt);
+```
+
+
+### OBJECT.KEYS() METHOD
+- Object.keys() returns an Array Iterator object with the keys of an object
+```JAVASCRIPT
+//Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = Object.keys(fruits);
+console.log(keys); // => ['0','1','2','3']
+```
+
+1. You are provided with an object called checkObj. Using a for... in loop, determine if the object contains the property foundNum. If it exists, reassign the value of found to 1
+``` JAVASCRIPT
+const checkObj = {
+  oddNum: 1,
+  evenNum: 2,
+  foundNum: 5,
+  randomNum: 18
+};
+
+let found = 0;
+// ADD CODE HERE
+for (let x in checkObj){
+  if (x === "foundNum"){
+    found = 1;  // do not use let found = 1 because let cannot be reassigned only changed
+  }
+}
+console.log(found) // => 1
+```
+
+### Objects - Iterating with for...in
+2. You are provided with an empty array called objToArray. Using a for... in loop, fill the array with all of the numbers from the checkObj object if they are greater than or equal to 2.
+``` JAVASCRIPT
+const checkObj = {
+  oddNum: 1,
+  evenNum: 2,
+  foundNum: 5,
+  randomNum: 18
+};
+
+const objToArray = [];
+// ADD CODE HERE
+for (let x in checkObj){
+  if (checkObj[x]>=2){
+  objToArray.push(checkObj[x]);
+  }
+}
+console.log(objToArray); // => [2,5,18]
+```
+### Objects - Iterating with a for loop
+3. This time, use the Object.values() method to return an array of checkObj's values, and assign this array to a constant called objToArray. Next, use a for loop to iterate through objToArray and determine if any of the numbers are divisible by 6. If so, reassign the value of divBy6 to true.
+
+
+
+
 
 
 
