@@ -18,10 +18,95 @@ const drawStairs = (n) => {
 drawStairs(5)
 
 
+/* QUESTION 6 
+Declare a function 'NumberedList', which returns a new instance of a 'NumberedList' object.
+NumberedList objects should function similarly to arrays - i.e. they store values at number indexes, starting at 0. Any arguments passed into the 'NumberedList' constructor should be sequentially added to the NumberedList when it is instantiated.
+NumberedList objects should also contain a length property, which keeps track of the number of elements in the oink.
+*/
+
+/* 
+QUESTION 6 (PART 2)
+Declare a function, 'add', which is accessible to ALL instances of 'NumberedList'. 'add' should take in a single argument, and when invoked on a List instance, should add the argument to the end of that particular List  increment the List's length property, and return the new length.
+*/
 
 
+// QUESTION 6 (PART 3)
+// declare a function ‘contains’ that is accessible to ALL instances of ‘NumberedList'. ‘Contains’ should take in a single argument and return a boolean indicating whether the passed-in value is present in the particular NumberedList it was called upon.
+function NumberedList(...args){
+    this.oink = args;
+    //Length property 
+    this.length = args.length; 
+}
+  
+NumberedList.prototype.add = function(val){
+    //Add val to end of oink
+    this.oink.push(val);
+    //Increment the oink's length property 
+    this.length++;
+    //Return new length; 
+    return this.length;
+}
+  
+NumberedList.prototype.contains = function(val){
+    return this.oink.includes(val);
+}
+  //Test Cases:
+  
+const myList = new NumberedList(1,2,3);
+  
+console.log(myList.add(4));
+  
+console.log(myList);
+  
+console.log(myList.contains(2)) // => false 
 
 
+// Declare a function 'OrderedList', which takes in no arguments and returns an instance of an 'OrderedList' object when invoked with the 'new' keyword. OrderedList objects should function similarly to arrays - i.e. they will store values at numbered indexes, starting at 0. However, all elements are in sorted order.
+
+// All OrderedList objects should contain their own 'length' property, which keeps track of the number of items they contain. When an OrderedList is first created, it should have a length of 0.
+
+// - Task 1: Declare a function, 'add', which is accessible to ALL instances of 'OrderedList'. 'add' should take in a number as a single argument, and when invoked on an OrderedList instance, should add the number to that OrderedList in descending order, update the OrderedList's length property appropriately, and return the length of the OrderedList.
+
+// - Task 2: Declare a function, 'reverse', which is accessible to ALL instances of 'OrderedList'. 'reverse' should take in no arguments, and when invoked on an OrderedList instance, should reverse the order of all elements in that OrderedList (except the 'length' property).
+
+// - Task 3: Declare a function, 'getMax', which is accessible to ALL instances of 'OrderedList'. 'getMax' should take in no arguments, and when invoked on an OrderedList instance, should return the maximum number in the instance.
+
+
+function OrderedList(){
+    this.length = 0;
+    this.list = [];
+}
+  
+  //add() 
+OrderedList.prototype.add = function(num){
+    //Add the number to Ordered List (descending order)
+    this.list.push(num);
+    this.list = this.list.sort((a,b) => b-a)
+    //Update length property 
+    this.length++;
+    //Return the length of the ordered list 
+    return this.length;
+}
+  //reverse() 
+OrderedList.prototype.reverse = function(){
+    return this.list.reverse();
+}
+  //getMax()
+OrderedList.prototype.getMax = function(){
+    return Math.max(...this.list);
+}
+  
+  //Test Case:
+const myList = new OrderedList();
+  
+console.log(myList.add(1))
+console.log(myList.add(3))
+console.log(myList.add(2))
+console.log(myList)
+  
+console.log(myList.reverse()) // =< [1,2,3]
+  
+console.log(myList.getMax()) // => 3
 
 
 ////////////////////////////
