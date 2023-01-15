@@ -1,7 +1,7 @@
 # Number Fundamentals
 
 ### Add / Subtract
-```
+```JAVASCRIPT
 let birthYear = 1993;
 let age = 29;
 let in10Yrs = age + 10;
@@ -14,7 +14,7 @@ console.log(in10Yrs);
 ```
 
 ### Multiply / Divide
-```
+```JAVASCRIPT
 
 let twentyTimesFour = 20 * 4; 
 let nineOverThree = 9/3;
@@ -46,7 +46,7 @@ console.log(twoHundredTimesThree);
 ### Incrementor and Decrementor
 - By using incrementor(++) we can increase the value of a number by 1 
 - By using decrementor(--) we can decrease the value of a number by 1
-```
+```JAVASCRIPT
 let num1 = 32;
 let num2 = 44;
 
@@ -64,7 +64,7 @@ console.log(num2) //43
     -= - subtraction
     *= - multiplication
     /= - division
-```
+```JAVASCRIPT
 let num1 = 32;
 let num2 = 25;
 let num3 = 92;
@@ -92,7 +92,7 @@ console.log(num4)
 
 ### Type Coercion
 - We can't add a string value and a number value together; instead, JavaScript "coerces" (changes) the number into a string and treats the + operator as an instruction to concatenate strings.
-```
+```JAVASCRIPT
 console.log("10" + "5"); // 105
 console.log("10" + 5); // 105
 console.log(10 + 5); // 15

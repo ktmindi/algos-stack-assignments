@@ -50,7 +50,7 @@
 - Two common string methods are toUpperCase and toLowerCase to use these methods we have to include () at the end of the method name
     - favArtist.toUpperCase()
 - Example
-```
+```JAVASCRIPT
 let hometown = "New York City";
 let favAlbum = "The Rise and Fall of Ziggy Stardust and the Spiders From Mars"
 
@@ -67,7 +67,7 @@ console.log(lower);
 
 ### Bracket Notation for Strings
 - to access a specific character in a string we can add brackets [] to the end of our string and place the index of the character inbetween the brackets
-```
+```JAVASCRIPT
 const songTitle = "Space Oddity"
 const lyrics = "This is Ground Control to Major Tom / You’ve really made the grade"
 

@@ -1,18 +1,18 @@
 # These notes will cover basics such as variables, strings, data types, arrays, and loops
 
-### Arrays - Examining Elements
+## Arrays - Examining Elements
 - One way we can store multiple values in a single place is by using an array denoted by square brackets []
 - Indexing starts at 0 and therefore to call a single element from our array we can use 
-```
+``` JAVASCRIPT
 let friends = ['George', 'Thai', 'Brandon'];
 console.log(friends[2]); // should log: 'Brandon'
-```
-** Built in functions **
+``` 
+**Built in functions**
 - length - tells us how many elements are in an array
 - push - add an element to the END of the array
 - pop - remove an element from the END of the array
 
-```
+``` JAVASCRIPT
 let numbers = [1, 2, 3, 4];
 numbers.push(5);
 console.log(numbers); // should log: [1, 2, 3, 4, 5]
@@ -22,9 +22,10 @@ console.log(numbers); // should log: [1, 2, 3, 4]
 console.log(numbers.length); // should log 4
 ```
 
-### For Loops - Fundamentals
+## For Loops - Fundamentals
 - Loops will allow you to write a block of code once, and repeat the execution of the code for a given number of times.
-```
+- iterate through the array = use a loop 
+```JAVASCRIPT
 for (let i = 0; i < 10; i++) {
   // code to be repeated goes here
 }
@@ -42,9 +43,9 @@ for (let i = 0; i < 10; i++) {
     - Once the loop conditions are declared we can move onto inserting the code that we will want to be repeated inside the curly braces. This code will again be executed until #2 returns false
 
 
-### Looping through an Array
+## Looping through an Array
 - Remember that a value of an array can be accessed using the INDEX of its position starting at 0 therefore we let our intial expression i = 0
-```
+```JAVASCRIPT
 const myArray = ['string1', 'string2', 'string3'];
 
 for (let i = 0; i < myArray.length; i++) {
@@ -55,7 +56,8 @@ for (let i = 0; i < myArray.length; i++) {
 - Since we are using i as an index, inside our code block we can reference the current element of an array using myArray[i]
 
 - Using a for loop, decrement countDown by one each time the loop runs until it equals 0, making use of looping functionality instead of logging each number separately.
-```let countDown = 10;
+```JAVASCRIPT
+let countDown = 10;
 // ADD CODE HERE
 
 //this will give us 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 LOGGING EACH NUMBER SEPARATELY which is not what we want
@@ -71,11 +73,11 @@ for (let i=1; i<=10; i++){
 console.log("countdown", countDown) // -> should print 0;
 ```
 
-### Challenge: For Loops and Arrays
+## Challenge: For Loops and Arrays
 1. Iterate through the synonyms array using a for loop, pushing a greeting string with the format "Have a [synonym] day!" into the greetings array.
 
 2. Use a second for loop to iterate through the greetings and console.log() each greetings.
-```
+```JAVASCRIPT
 const synonyms = ['fantastic', 'wonderful', 'great'];
 const greetings = [];
 
@@ -99,7 +101,7 @@ for (let i = 0; i<greetings.length; i++){
 ```
 
 3. For this challenge, loop through the arrays and push a string with the format "My name is [firstName] [lastName] and I am from [place]" into the array holding the respective bios.
-```
+``` JAVASCRIPT
 const firstNames = ["Jon", "Arya", "Jamie"];
 const lastNames = ["Snow", "Stark", "Lannister"];
 const places = ["The Wall", "Winterfell", "Kings Landing"];
@@ -119,9 +121,9 @@ for (let i=0; i<firstNames.length;i++){
 console.log(bios);
 ```
 
-### While Loops Fundamentals
+## While Loops Fundamentals
 1. Use a while loop to increment count by 2 on each repetition of the block of code. Run the code block of your while loop until count is 8.
-```
+``` JAVASCRIPT
 let count = 2;
 // ADD CODE HERE
 while (count<8){
@@ -131,6 +133,81 @@ while (count<8){
 // Uncomment these to check your work!
 console.log(count); 
 ```
+
+2. Initialize a variable addThis to 0 and a variable sum to 0. Use a while loop to repeat a code block as long as addThis is less than 10. In the code block, add the value of addThis to sum, then increment addThis by 1. After the while loop runs, the value of sum should be the sum of the numbers 0 through 9.
+``` JAVASCRIPT
+// ADD CODE HERE
+let addThis = 0;
+let sum = 0;
+
+while (addThis<10){
+  sum += addThis;
+  addThis++;
+}
+// Uncomment the line below to check your work!
+console.log(sum);
+```
+
+
+## Control Flow - if statements
+- Using an if statement, we can execute a block of code if the condition inside the parentheses is met.
+- If we wanted to chain more if statements together, we could use an else if block.
+- Finally we can also use an else statement to catch anything that your if and else if conditions don't meet.
+
+1. Use an if statement to check if num is greater than 100. If num is greater than 100, reassign the value of final to null. Otherwise, set final to be two times the value of num.
+``` JAVASCRIPT
+const num = 40;
+let final;
+// ADD CODE HERE
+
+if (num>100){
+  final = null;
+}else{
+  final = num*2;
+}
+
+// Log final to the console below to check your work
+console.log(final);
+```
+
+- When i is inside **square brackets** you are calling for the `VALUE at INDEX I` myArray[i] => will give you the value at that index
+- When i is inside **parenthesis** like below, you are calling for the `VALUE of INDEX` => will output the number assigned to i
+
+2. Challenge fizzbuzz ~ Use a loop to iterate through the numbers 1 through 16. Push each number into fb, but push the string "fizz" in place of numbers divisible by 3, "buzz" in place of numbers divisible by 5, and "fizzbuzz" in place of numbers divisible by both 3 and 5.
+``` JAVASCRIPT
+const fb = [];
+for (let i = 1; i<=16; i++){
+  if (i%3===0 && i%5===0){
+    fb.push('fizzbuzz');
+  }else if(i%3===0){
+    fb.push('fizz');
+  }else if(i%5===0){
+    fb.push('buzz')
+  }else{
+    fb.push(i);
+  }
+}
+console.log(fb)
+
+// should log: [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8, 'fizz', 'buzz', 11, 'fizz', 13, 14, 'fizzbuzz', 16]
+```
+
+## Control Flow and Iteration
+1. Iterate through the array and multiply a number by 10 if it is greater than or equal to 5.
+``` JAVASCRIPT
+const timesTenIfOverFive = [23, 9, 11, 2, 10, 6];
+// ADD CODE HERE
+for (let i=0; i<timesTenIfOverFive.length; i++){
+  if (timesTenIfOverFive[i] >=5){
+    timesTenIfOverFive[i] *= 10;
+  }
+}
+
+// Uncomment the line below to check your work!
+console.log(timesTenIfOverFive); // -> should print [230, 90, 110, 2, 100, 60]
+```
+
+
 
 
 ### H3

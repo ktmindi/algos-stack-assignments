@@ -97,16 +97,16 @@ OrderedList.prototype.getMax = function(){
 }
   
   //Test Case:
-const myList = new OrderedList();
+// const myList = new OrderedList();
   
-console.log(myList.add(1))
-console.log(myList.add(3))
-console.log(myList.add(2))
-console.log(myList)
+// console.log(myList.add(1))
+// console.log(myList.add(3))
+// console.log(myList.add(2))
+// console.log(myList)
   
-console.log(myList.reverse()) // =< [1,2,3]
+// console.log(myList.reverse()) // =< [1,2,3]
   
-console.log(myList.getMax()) // => 3
+// console.log(myList.getMax()) // => 3
 
 
 ////////////////////////////

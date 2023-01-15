@@ -2,7 +2,7 @@
 - Are useful for determining whether or not blocks of code should be executed
 - They are also the default result for many evaluations
 - Extremely useful when dealing with conditional statements
-```
+```JAVASCRIPT
 let likesJavaScript = true;
 let likesMath = false;
 
@@ -10,7 +10,7 @@ const numToCheck = 10;
 console.log(numToCheck === 10) // => true
 ```
 - Another example of booleans
-```
+```JAVASCRIPT
 let iHaveChanged = false;
 
 // ADD CODE BELOW
@@ -37,7 +37,7 @@ console.log(codingIsTooHard);
 
 - We already know that a single equals sign (=) is used to assign value to a variable, so we can't use that to compare two values
 - So let's start with loose equality (==). This operator is used to compare if 2 values have the same value, even if they aren't necessarily the same type.
-```
+```JAVASCRIPT
  1   ==  1        // true
 "1"  ==  1        // true
  1   == '1'       // true
@@ -48,7 +48,7 @@ false == false    // true
 - All of these comparisons are true, because the value is the same even though they may have a different data type.
 
 - For 2 values to be strictly equal (===) to each other, they need to not only have the same value, but also must have the same data type:
-```
+```JAVASCRIPT
  2   ===  2        // true
 "2"  ===  2        // false
  2   === '2'       // false
@@ -58,7 +58,7 @@ false === false    // true
 ```
 
 ### Challenge
-```
+```JAVASCRIPT
 // 1.
 const small = 2;
 const large = 5342;
