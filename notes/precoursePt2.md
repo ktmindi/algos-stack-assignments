@@ -21,7 +21,7 @@ numbers.pop();
 console.log(numbers); // should log: [1, 2, 3, 4]
 console.log(numbers.length); // should log 4
 ```
-
+___
 ## For Loops - Fundamentals
 - Loops will allow you to write a block of code once, and repeat the execution of the code for a given number of times.
 - iterate through the array = use a loop 
@@ -120,7 +120,7 @@ for (let i=0; i<firstNames.length;i++){
 }
 console.log(bios);
 ```
-
+___
 ## While Loops Fundamentals
 1. Use a while loop to increment count by 2 on each repetition of the block of code. Run the code block of your while loop until count is 8.
 ``` JAVASCRIPT
@@ -148,7 +148,7 @@ while (addThis<10){
 console.log(sum);
 ```
 
-
+___
 ## Control Flow - if statements
 - Using an if statement, we can execute a block of code if the condition inside the parentheses is met.
 - If we wanted to chain more if statements together, we could use an else if block.
@@ -191,7 +191,7 @@ console.log(fb)
 
 // should log: [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8, 'fizz', 'buzz', 11, 'fizz', 13, 14, 'fizzbuzz', 16]
 ```
-
+___
 ## Control Flow and Iteration
 1. Iterate through the array and multiply a number by 10 if it is greater than or equal to 5.
 ``` JAVASCRIPT
@@ -206,14 +206,14 @@ for (let i=0; i<timesTenIfOverFive.length; i++){
 // Uncomment the line below to check your work!
 console.log(timesTenIfOverFive); // -> should print [230, 90, 110, 2, 100, 60]
 ```
-
+___
 ## Objects - Examining Properties
 - Objects are data structures used to store related data represented with **keys** and associated **values**
 - Keys are also referred to as **properties**. 
 - Keys give us an easy way to reference the values, so they are almost always descriptive strings. 
 - Values can be any valid data type: a number, string, array, and other objects
 
-### FOR...IN
+### `FOR...IN`
 > Do not use for in over an Array **if the index order is important** [In this instance its better to use a **for** loop, a **for of** loop, or **Array.forEach()** when order is important]
 - The for in statement can loop over array values
 ```JAVASCRIPT
@@ -249,7 +249,7 @@ console.log(txt);
 ```
 
 
-### OBJECT.KEYS() METHOD
+### `OBJECT.KEYS() METHOD`
 - Object.keys() returns an Array Iterator object with the keys of an object
 ```JAVASCRIPT
 //Example
@@ -320,7 +320,7 @@ for (let x in objToArray){
 }
 console.log(divBy6);
 ```
-
+---
 ### Objects - Nested Arrays
 1. You are provided with an empty array called nestedArr. Using a for loop starting at index 0, add 5 subarrays to nestedArr, with each nested array containing the string 'loop' concatenated with the corresponding index in nestedArr as its first element, and the index as its second element. Example of a subarray: ['loop3', 3].
 ```javascript
@@ -331,7 +331,7 @@ for (let i=0;i<5;i++){
 }
 console.log(nestedArr); //=> [['loop0', 0], ['loop1', 1], ['loop2', 2], ['loop3', 3], ['loop4', 4]]
 ```
-
+---
 ### Objects - Adding Properties
 1. You are provided with an array, possibleIterable. Using a for loop, build out the object divByThree so that each key is an element of possibleIterable that is divisible by three. The value of each key should be the array index at which that key can be found in possibleIterable.
 ``` javascript
@@ -346,7 +346,7 @@ for (let i = 0; i<possibleIterable.length; i++){
 console.log(divByThree); // => { 3: 1, 6: 3, 9: 2 }
 ```
 
-
+---
 ### Objects - Evaluating Keys
 1. You are given an object called sumMe containing several key/value pairs and a variable called total whose initial value is 0. Using a for... in loop, iterate through the keys of sumMe; if the value corresponding to a key is a number, add it to total.
 ``` javascript
@@ -369,7 +369,7 @@ console.log(total); // => 15
 
 ```
 
-
+---
 
 
 ### H3
