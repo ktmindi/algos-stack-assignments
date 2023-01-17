@@ -321,6 +321,54 @@ for (let x in objToArray){
 console.log(divBy6);
 ```
 
+### Objects - Nested Arrays
+1. You are provided with an empty array called nestedArr. Using a for loop starting at index 0, add 5 subarrays to nestedArr, with each nested array containing the string 'loop' concatenated with the corresponding index in nestedArr as its first element, and the index as its second element. Example of a subarray: ['loop3', 3].
+```javascript
+const nestedArr = [];
+// ADD CODE HERE
+for (let i=0;i<5;i++){
+  nestedArr.push([`loop${i}`,(i)]);
+}
+console.log(nestedArr); //=> [['loop0', 0], ['loop1', 1], ['loop2', 2], ['loop3', 3], ['loop4', 4]]
+```
+
+### Objects - Adding Properties
+1. You are provided with an array, possibleIterable. Using a for loop, build out the object divByThree so that each key is an element of possibleIterable that is divisible by three. The value of each key should be the array index at which that key can be found in possibleIterable.
+``` javascript
+const possibleIterable = [4, 3, 9, 6, 23];
+const divByThree = {};
+// ADD CODE HERE
+for (let i = 0; i<possibleIterable.length; i++){
+  if (possibleIterable[i]%3 === 0){
+    divByThree[possibleIterable[i]]=i; //first we access our object divByThree, then using bracket notation we are going to assign it a new property which is going to be our current element which is possibleIterable at index i, and we are going to assign it a value '=i' which is going to be our current index which is represented by i
+  }
+}
+console.log(divByThree); // => { 3: 1, 6: 3, 9: 2 }
+```
+
+
+### Objects - Evaluating Keys
+1. You are given an object called sumMe containing several key/value pairs and a variable called total whose initial value is 0. Using a for... in loop, iterate through the keys of sumMe; if the value corresponding to a key is a number, add it to total.
+``` javascript
+const sumMe = {
+  hello: 'there',
+  you: 8,
+  are: 7,
+  almost: '10',
+  done: '!'
+};
+let total = 0;
+// ADD CODE HERE
+
+for (let x in sumMe){
+  if (typeof (sumMe[x]) === "number"){
+    total += sumMe[x];
+  }
+}
+console.log(total); // => 15
+
+```
+
 
 
 
