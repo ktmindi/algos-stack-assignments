@@ -8,19 +8,24 @@
 
 function makeItBig(array){
     for(let i=0; i<array.length; i++){
-        if(array[i]<0){
-            console.log("big")
+        if(array[i]>0){
+            array[i] = "big";
         }
     } return array;
 }
+console.log(makeItBig([-1,3,5,-5]));
 
 
 
 // Print Low, Return High
 
 // Create a function that takes an array of numbers. The function should print the lowest value in the array, and return the highest value in the array.
+// function printLowReturnHigh(array){
 
- 
+// }
+
+// //test case
+// console.log(printLowReturnHigh([1,6,-1,10,9,2]));
 
 // Print One, Return Another
 
