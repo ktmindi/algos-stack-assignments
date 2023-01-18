@@ -20,12 +20,40 @@ console.log(makeItBig([-1,3,5,-5]));
 // Print Low, Return High
 
 // Create a function that takes an array of numbers. The function should print the lowest value in the array, and return the highest value in the array.
-// function printLowReturnHigh(array){
+function printLowReturnHigh(array){
+    return array.sort(function(a, b){return a-b});
+}
 
-// }
+console.log(printLowReturnHigh([1,6,-1,10,9,2]));
 
-// //test case
-// console.log(printLowReturnHigh([1,6,-1,10,9,2]));
+//alternative 
+function printLowReturnHigh2(array){
+    // return  array.sort(function(a, b){return b-a});
+ 
+   
+   //Create two variables to store highest and lowest numbers in array
+   let lowest = Infinity;
+   let highest = -Infinity;
+   //Iterate over array 
+   for(let i =0;i<array.length;i++){
+     //If element is greater than `highest` variable, assign the element to the `highest` variable 
+     if(array[i]>highest){
+       highest = array[i]
+       //Else if element is lower than `lowest` variable, assign the element to the `lowest` variable
+     }else if(array[i]<lowest){
+       lowest = array[i];
+     }
+   }
+   //Console log (lowest)
+   //Return highest
+   console.log("Lowest Number: ", lowest)
+   return highest;
+ 
+ }
+ printLowReturnHigh2([1,4,7,-1,3,-10,20]) //will print "Lowest Number: -10" in terminal and return 20 - but it will not be visible in terminal
+
+
+
 
 // Print One, Return Another
 
