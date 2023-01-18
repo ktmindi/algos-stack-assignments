@@ -21,12 +21,11 @@
 // }
 // console.log(txt);
 
-const person = {fname:"John", lname:"Doe", age:25}; 
-
-let txt = "";
-for (let x in person) {
-  txt += person[x] + " ";
-  console.log("x", x);
-  console.log("person[x]", person[x]);
+function makeItBig(array){
+    for(let i=0; i<array.length; i++){
+        if(array[i]>0){
+            array[i] = "big";
+        }
+    } return array;
 }
-console.log(txt);
+console.log(makeItBig([-1,3,5,-5]));
