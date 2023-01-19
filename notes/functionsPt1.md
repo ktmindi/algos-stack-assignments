@@ -599,26 +599,50 @@ Write a function addingAllTheWeirdStuff which adds the sum of all the odd number
 
 BONUS: If any element in array2 is greater than 20, add 1 to every element in array1.
 ``` javascript
-function getTheRange(arr){
-  // ADD CODE HERE
-  let result = [];
-  let lowest = Infinity;
-  let highest = -Infinity;
-  for(let i=0;i<arr.length;i++){
-    if(arr[i]<lowest){
-      lowest = arr[i];
-    }else if(arr[i]>highest){
-      highest = arr[i];
+function addingAllTheWeirdStuff(array1, array2){
+  let oddSum = 0;
+  let evenSum = 0;
+  let addOne = false;
+  //find the sum of all odd and even numbers in array2
+  for(let i=0; i<array2.length; i++){
+    if (array2[i]%2 !==0){
+      oddSum += array2[i];
+    }else{
+      evenSum += array2[i];
+    }
+    if(array2[i]>20){
+      addOne = true;
+      break;
+    }
+  }console.log(oddSum);
+console.log(evenSum);
+  //add the sum of all the odd numbers in array2 to each element under 10 in array1
+  //add the sum of all the even numbers in array2 each element over 10 in array1
+  for (let i=0; i<array1.length;i++){
+    if (array1[i]<10){
+      array1[i]+=oddSum;
+    }else{
+      array1[i]+=evenSum;
     }
   }
-  let range = highest-lowest;
-  result.push(lowest, highest, range);
-  return result;
+  //if any element in array2 is greater than 20 add 1 to every element in array1
+  if (addOne) {
+    for (let i=0; i<array1.length;i++){
+      array1[i]+=1;
+    }
+  }
+  return array1;
 }
 
-console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
 ```
+___
+### `Challenge: disemvowel`
+Write a function disemvowel that takes in a string and returns a new string with all vowels removed.
+``` javascript
 
+```
 
 
 
