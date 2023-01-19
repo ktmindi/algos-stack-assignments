@@ -339,7 +339,297 @@ function droids(arr) {
   }
 }
 ```
-- Could also be writen as 
+
+___
+### `Challenge: Short-Circuiting a Loop`
+Complete the function holidays that accepts an array of strings and iterates through the array. If the array contains the string "October", return "Happy Halloween". Otherwise, return the string "Have a great day!". Do not use a variable to store the result that you are returning.
+``` javascript
+function holidays(arr) {
+  // Do not use a variable to store your result 
+  for (let i=0; i<arr.length;i++){
+    if(arr[i]==="October"){
+      return "Happy Halloween";
+    }
+  }
+  return "Have a great day!";
+}
+
+const months = ["April", "May", "June", "October"];
+const animals = ["Cats", "Dogs", "Pigs"];
+console.log(holidays(months)); // should return: "Happy Halloween"
+console.log(holidays(animals)); // should return: "Have a great day!"
+
+//solution provided
+//declare a function holidays that accepts an array of strings
+function holidays(arr){
+  //use a for loop to iterate thru the input array
+  for (let i=0; i<arr.length; i++) {
+    //use a conditional to check each element of the array for the string "October"
+    //if the current element is "october" return "happy halloween"
+    if (arr[i] === 'October') return 'Happy Holloween';
+  }
+  //if not return have a great day
+  return 'Have a great day!';
+}
+```
+___
+### `Challenge: For Loops - Updating Array Elements`
+Using a FOR loop, write a function addN which adds the argument n to each number in the array arr and returns the updated arr.
+``` javascript
+//inputs is an array and a number
+//output is an array
+function addN(arr, n){
+  //iterate over the array 
+  for (let x=0; x<arr.length; x++){
+    //for every element inside the array add n to the element
+    arr[x]+=n;
+  }
+  return arr;
+  //return array
+} 
+
+console.log(addN([1, 2, 3], 3)); // expected log [4, 5, 6]
+console.log(addN([3, 4, 5], 2)); // expected log [5, 6, 7]
+```
+
+___
+### `Challenge: For Loops - Summing Array Elements`
+Using a FOR loop, write a function getTheSum which adds each element in arr to find the array total.
+``` javascript
+//input = array
+//output = array
+function getTheSum(arr){
+  //declare a variable for the total
+  let total = 0;
+  //iterate over the array using a for loop
+  for (let i=0; i<arr.length; i++){
+  //add each element to eachother
+    total = arr[i]+total;
+  }
+  return total;
+  //return the total
+}
+
+// Uncomment these to check your work!
+console.log(getTheSum([3, 6, 9])); // expected log 18
+console.log(getTheSum([10, 11, 12])); // expected log 33
+```
+
+___
+### `Challenge: multiplyAll`
+Create a function multiplyAll that takes an unknown number of integer arguments, multiplies them all together, and returns the result.
+``` javascript
+//input = unknown number of integer arguments
+//output = integer
+//declare a function
+function multiplyAll(...arg){ //...arg is an array-like object 
+  //declare a variable for the total and make the variable equal to the first integer [OR BECAUSE THIS IS MULTIPLYING YOU CAN SET IT TO 1 AND CHANGE LET I = 1 TO LET I = 0]
+  let total = arg[0];
+  //iterate over the arguments 
+  for (let i=1; i<arg.length; i++){
+    //multiply each argument to the total
+    total = arg[i]*total;
+  }
+  //return the total
+  return total;
+}
+
+console.log(multiplyAll(9, 4, 5, 6, 7, 2, 1, 8, 3)) // should log: 362880
+console.log(multiplyAll(5, 5, 5, 3)) // should log: 375
+```
+___
+### `Challenge: Loops - Summing Two Arrays`
+Write a function mergingElements which adds each element in array1 to the corresponding element of array2 and returns the new array.
+``` javascript
+//input two arrays
+//output one array
+function mergingElements(array1, array2){
+  //iterate over array
+  for (let i=0; i<array1.length;i++){
+    //add every element from array1 to corresponding element array2
+    array2[i] += array1[i];
+  }
+  return array2;
+}
+
+console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
+console.log(mergingElements([7, 3, 6, 0], [3, 9, 17, 81])); // expected log [10, 12, 23, 81]
+```
+
+___
+### `Challenge: Loops & Control Flow`
+Write a function mergingTripletsAndQuints which takes in two arrays as arguments. This function will return a new array replacing the elements in array1 if they are divisible by 3 or 5. The number should be replaced with the sum of itself added to the element at the corresponding index in array2.
+``` javascript
+//input two arrays
+//output one array
+function mergingTripletsAndQuints(array1, array2) {
+ // iterate over array1
+  for (let i=0; i<array1.length;i++){
+    //if the number is divisible by 3 or 5 
+    if(array1[i]%3===0 || array1[i]%5===0){
+      //replace it with the sum of itself and corresponding element in array2
+      array1[i]+=array2[i];
+    }
+  }
+  //return new array
+  return array1;
+}
+
+// Uncomment these to check your work!
+console.log(mergingTripletsAndQuints([1, 2, 3, 4, 5, 15], [1, 3, 6, 7, 8, 9])); // expected log [1, 2, 9, 4, 13, 24]
+console.log(mergingTripletsAndQuints([1, 1, 3, 9, 5, 15], [1, 2, 3, 4, 5, 6])); // expected log [1, 1, 6, 13, 10, 21]
+```
+___
+### `Challenge: While Loops - Counters`
+Using a WHILE loop, write a function imAboutToExplodeWithExcitement which prints a countdown from n. When the countdown gets to 5, print 'Oh wow, I can't handle the anticipation!' When it's at 3, print 'I'm about to explode with excitement!' When the counter is finished, print 'That was kind of a let down'.
+``` javascript
+function imAboutToExplodeWithExcitement (n) {
+  while(n >0){
+    if(n !== 5 || n!==3){
+      console.log(n)
+      n--;
+    }
+    if(n ===5){
+      console.log("Oh wow, I can't handle the anticipation!");
+      n--;
+    }
+    if(n===3){
+      console.log("I'm about to explode with excitement!")
+     n--;
+    }
+    if(n===0){
+    console.log("That was kind of a let down")
+    }   
+  }
+}
+imAboutToExplodeWithExcitement(10); // expected log 10, 9, 8, 7, 6, 'Oh wow, I can't handle the anticipation!', 4, I'm about to explode with excitement!', 2, 1, 'That was kind of a let down'
+
+
+//another way to do it
+function imAboutToExplodeWithExcitement(n){
+  let count = 0;
+  while (n>=1){
+    console.log(n)
+    n = n-1;
+    if(n===5){
+      console.log("Oh wow, I can't handle the anticipation!");
+      n--;
+    } else if(n===3){
+      console.log("I'm about to explode with excitement!");
+      n--;
+    } else if(n===0){
+      console.log("That was kind of a let down");
+    } 
+  }
+}
+
+imAboutToExplodeWithExcitement(10);
+
+
+
+//the way i had it only prints starting from 9 and not 10 
+function imAboutToExplodeWithExcitement(n){
+  let count = 0;
+  while (n>=1){
+    n= n-1;
+    if(n===5){
+      console.log("Oh wow, I can't handle the anticipation!");
+    } else if(n===3){
+      console.log("I'm about to explode with excitement!");
+    } else if(n===0){
+      console.log("That was kind of a let down");
+    } else{
+      console.log(n)
+    }
+  }
+}
+
+```
+
+___
+### `Challenge: Control Flow - if statements and the Math object`
+Using an IF/ELSE statement, write a function closestToTheMark that takes two player inputs as number arguments. The function will return 'Player 1 is closest' or 'Player 2 is closest' depending on which player input is closest to the randomly generated number.
+
+Note: Due to the output being based off of a random factor, the tests provided below cannot determine if you have solved the prompt exactly. The test cases for this challenge check for the correct data types only.
+``` javascript
+function closestToTheMark(player1, player2){
+  const theMark = Math.floor(Math.random() * 100)
+  console.log(`If theMark is ${theMark}...`);
+  let dist1 = Math.abs(theMark-player1);
+  console.log(dist1);
+  let dist2 = Math.abs(theMark-player2);
+  console.log(dist2);
+  if(dist1<dist2){
+    return "Player 1 is closest";
+  } else {
+    return"Player 2 is closest";
+  }
+}
+
+console.log(closestToTheMark(25, 75));
+```
+
+___
+### `Challenge: Loops - Range`
+Using a loop, write a function getTheRange which finds the range (difference between high and low) of arr. The value returned should be an array with the low, high, and range.
+``` javascript
+function getTheRange(arr){
+  // ADD CODE HERE
+  let result = [];
+  let lowest = Infinity;
+  let highest = -Infinity;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]<lowest){
+      lowest = arr[i];
+    }else if(arr[i]>highest){
+      highest = arr[i];
+    }
+  }
+  let range = highest-lowest;
+  result.push(lowest, highest, range);
+  return result;
+}
+
+console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+```
+
+___
+### `Challenge: Loops - Multiple Conditions`
+Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
+
+BONUS: If any element in array2 is greater than 20, add 1 to every element in array1.
+``` javascript
+function getTheRange(arr){
+  // ADD CODE HERE
+  let result = [];
+  let lowest = Infinity;
+  let highest = -Infinity;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]<lowest){
+      lowest = arr[i];
+    }else if(arr[i]>highest){
+      highest = arr[i];
+    }
+  }
+  let range = highest-lowest;
+  result.push(lowest, highest, range);
+  return result;
+}
+
+console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
