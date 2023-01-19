@@ -641,7 +641,40 @@ ___
 ### `Challenge: disemvowel`
 Write a function disemvowel that takes in a string and returns a new string with all vowels removed.
 ``` javascript
+function disemvowel(string) {
+  let vowels = {
+    'a': true,
+    'e': true,
+    'i': true,
+    'o': true,
+    'u': true,
+  };
+  //create an array string that will act as our result value
+  let result="";
+  //loop through the inputted string
+  //convert the letter to lowercase to catch uppercase inputs
+  //check if the letter is inside of the object
+  //if not, concatenate that letter ionto result
+  for (let i=0; i < string.length; i++){
+    let letter = string[i].toLowerCase();
+    if (!vowels[letter]){
+      result += string[i];
+    }
+  }
 
+  //return reseult
+  return result;
+}
+
+// Uncomment these to check your work!
+console.log(disemvowel('CodeSmith')); // => 'CdSmth'
+console.log(disemvowel('BANANA')); // => 'BNN'
+console.log(disemvowel('hello world')); // => 'hll wrld'
+
+
+// another way 
+let word = "cOdesmith"
+console.log(word.replace(/[aeiouAEIOU]/g, ""));
 ```
 
 
