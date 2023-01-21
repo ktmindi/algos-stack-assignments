@@ -676,7 +676,34 @@ console.log(disemvowel('hello world')); // => 'hll wrld'
 let word = "cOdesmith"
 console.log(word.replace(/[aeiouAEIOU]/g, ""));
 ```
+___
+### `Challenge: addWaldo`
+Create a function addWaldo that accepts an object with keys being first names and values being last names. For example addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'}) should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
+``` javascript
+function disemvowel(string) {
 
+```
+___
+### `Challenge: findWaldo`
+Create a function findWaldo that accepts an object and returns the value associated with the key 'Waldo'. If the key 'Waldo' is not found, the function should return 'Where's Waldo?'
+``` javascript
+function disemvowel(string) {
+
+```
+___
+### `Challenge: arrayBuilder`
+Write a function arrayBuilder that takes in a count object and returns an array filled with the appropriate numbers of elements. The order of the elements in the array does not matter, but repeated elements should be grouped.
+``` javascript
+function disemvowel(string) {
+
+```
+___
+### `Challenge: Functions - Function Expression`
+Convert the function named functionDeclaration to an anonymous function expression and assign it to a variable called myFunc.
+``` javascript
+function disemvowel(string) {
+
+```
 
 
 
