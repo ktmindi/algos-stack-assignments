@@ -711,14 +711,77 @@ ___
 ### `Challenge: arrayBuilder`
 Write a function arrayBuilder that takes in a count object and returns an array filled with the appropriate numbers of elements. The order of the elements in the array does not matter, but repeated elements should be grouped.
 ``` javascript
-function disemvowel(string) {
+function arrayBuilder(obj) {
+  //Create a new array 
+  let newArr = [];
+  //Iterate over obj to access values 
+  for(let key in obj){
+    while(obj[key]>0){
+  //Add the key to array depending on corresponding value of key
+      newArr.push(key);
+      obj[key]-=1
+    }
+  }
+  //Return array 
+  return newArr;
+}
 
+// Uncomment these to check your work!
+console.log(arrayBuilder({'cats': 2, 'dogs': 1})); // => ['cats', 'cats', 'dogs']
+console.log(arrayBuilder({})); // => []
+
+
+function arrayBuilder(obj){
+  //input = obj
+  //output = array
+
+  //declare output array variable
+  const outputArray = [];
+  //for..in loop to iterate thru the properties inside of this object
+  for (let key in obj){
+    //count variable to store how many times this property should apprear in output array
+    let repeatCount = obj[key];
+    //while looop to push the property into output array as long as count variable is greater than 0 and decrement count variable
+    while (repeatCount>0){
+      outputArray.push(key);
+      repeatCount -=1;
+    }
+  }
+  //return output array
+  return outputArray;
+}
 ```
 ___
 ### `Challenge: Functions - Function Expression`
 Convert the function named functionDeclaration to an anonymous function expression and assign it to a variable called myFunc.
 ``` javascript
-function disemvowel(string) {
+// MODIFY THE CODE BELOW 
+//function functionDeclaration() {
+//  return "Hi there!";
+//}
+const myFunc = function(){
+  return "Hi there!"
+}
+console.log(myFunc()) //should log: "Hi there!"
+
+//Arrow 
+const myFunc2 = () => {
+  return 'Hi there!'
+}
+
+
+```
+___
+### `Challenge: Functions - ES6`
+For this challenge, convert the function myJob from ES5 syntax to arrow function syntax.
+``` javascript
+// function myJob (name, profession) {
+//   return `Hi, my name is ${name} and I'm a ${profession}.`
+// }
+const myJob = (name,profession) => {
+  return `Hi, my name is ${name} and I'm a ${profession}.`
+}
+ console.log(myJob("Jon", "Knights Watchman"));
 
 ```
 
