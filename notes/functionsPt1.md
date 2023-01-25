@@ -680,14 +680,31 @@ ___
 ### `Challenge: addWaldo`
 Create a function addWaldo that accepts an object with keys being first names and values being last names. For example addWaldo({'Luke': 'Skywalker', 'Harley': 'Quinn', 'Ryan': 'Reynolds'}) should add the key 'Waldo' with the value 'unknown' to the object and return the mutated object.
 ``` javascript
-function disemvowel(string) {
+const addWaldo = (obj) => {
+  obj.Waldo = 'unknown'
+  return obj;
+}
+
+const siliconValley = {'Richard': 'Hendricks', 'Erlich': 'Bachman', 'Bertram': 'Gilfoyle'}
+console.log(addWaldo(siliconValley)) // => { Richard: 'Hendricks', Erlich: 'Bachman', Bertram: 'Gilfoyle', Waldo: 'unknown' }
 
 ```
 ___
 ### `Challenge: findWaldo`
 Create a function findWaldo that accepts an object and returns the value associated with the key 'Waldo'. If the key 'Waldo' is not found, the function should return 'Where's Waldo?'
 ``` javascript
-function disemvowel(string) {
+const findWaldo = (obj) => {
+  if(obj.Waldo){
+    return obj.Waldo
+  } 
+  else{
+    return "Where's Waldo?"
+  }
+}
+const DC = {'Bruce': 'Wayne', 'Harley': 'Quinn'}
+const supernatural = {'Sam': 'Winchester', 'Dean': 'Winchester', 'Waldo': 'unknown'}
+console.log(findWaldo(DC)) // => 'Where's Waldo?'
+console.log(findWaldo(supernatural)) // => 'unknown'
 
 ```
 ___
