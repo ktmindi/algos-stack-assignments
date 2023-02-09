@@ -100,6 +100,41 @@ console.log(addNum(20)); // prints [21, 22, 23]
 ```
 - we are delivering a function that will calculate any possible addition you could throw at it and did it by abstracting away one number
 
+### One Step Further
+What if we want to perform other operations like subtraction or more complex manipulation?
+- Functions cannot take operators like + and - as parameters, so that's one limiting factor.
+- In Javascript functions are first-class citizens which means functions can be passed as input to other functions (as well as returned from other functions, modified, and assigned to variables)
+    - This gives developers the ability to use functions as parameters, which we refer to as callbacks
+    - If a num parameter allows us to use any number [like 10 to 20] then a function parameter allows us to use any functionality [like adding, subtracting, or more complex manipulation]
+```javascript
+const array = [1,2,3];
+
+function update(callback){
+    const output = [];
+    for (let i =0; i<array.length; i++){
+        const updated = callback(array[i]);
+        output.push(updated);
+    }
+
+    return output;
+}
+//callback functions
+function add10(num){
+    return num + 10;
+}
+function multiplyBy20(num){
+    return num * 20;
+}
+function stringify(num){
+    return num.toString();
+}
+
+//call update with each callback function
+update(add10) // returns [11, 12, 13]
+update(multiplyBy20) // returns [20, 40, 60]
+update(stringify) // returns [‘1’, ‘2’, ‘3’]
+```
+
 ### H3
 ## H2
 # H1
