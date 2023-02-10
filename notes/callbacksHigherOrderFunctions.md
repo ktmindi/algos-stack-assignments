@@ -134,6 +134,87 @@ update(add10) // returns [11, 12, 13]
 update(multiplyBy20) // returns [20, 40, 60]
 update(stringify) // returns [‘1’, ‘2’, ‘3’]
 ```
+- this small change now allows us to use any function - called a callback, when we run the update function
+- this makes update a higher-order function because it now takes a callback as input
+
+### MAP Function in Javascript
+- this update function is essentially the built-in map function in Javascript
+- given a callback, **map** will output a new array where each element is the output of a call to the callback.
+
+___
+### `Challenge: pluralize`
+Create a function pluralize that takes an array of strings as input and returns a new array with an "s" added to the end of each string in the input array. For example, if the string "carrot" is in the input array, it should become the string "carrots" in the output array.
+
+The body of the pluralize function should employ a single for loop that pluralizes each string in the input array..
+``` javascript
+//input - array
+//output - new array
+function pluralize(arr){
+  //create new array
+  const output = [];
+  //iterate through loop
+  for (let i = 0; i<arr.length; i++){
+  //add s to each element and push to new array
+  	const element = arr[i] + 's';
+  	output.push(element);
+  //return new array
+  }
+  return output;
+}
+// Uncomment these to check your work!
+const animals = ["dog", "cat", "tree frog"];
+console.log(pluralize(animals)); // should log: ["dogs", "cats", "tree frogs"]
+```
+```javascript
+function pluralize(array,callback){
+  //Create a newArr 
+  const newArr = [];
+  //Iterate over passed-in arr
+  for (let i=0; i<array.length; i++){
+  //Run callback on each element, push to newArr
+    const answer = callback(array[i]);
+    newArr.push(answer);
+  }
+  //Return newArr
+  return newArr;
+}
+//Test Case:
+// console.log(pluralize(fruits));
+
+function addS(str){
+  return str + 's';
+}
+console.log(pluralize(fruits,addS))
+```
+```javascript
+function timesTwo(num){
+  return num*2;
+}
+
+function multiply(array,callback){
+  //create new array
+  const output = [];
+  //iterate over passed in array
+  for (let i=0; i<array.length;i++){
+    const twos = callback(array[i]);
+    output.push(twos);
+  }
+  return output;
+  //run callback on each element, push to new array
+  //return new array
+}
+
+//test case
+const numbers = [23,4,245];
+console.log(multiply(numbers,timesTwo))
+```
+
+
+
+
+
+
+
 
 ### H3
 ## H2
