@@ -165,6 +165,7 @@ function pluralize(arr){
 const animals = ["dog", "cat", "tree frog"];
 console.log(pluralize(animals)); // should log: ["dogs", "cats", "tree frogs"]
 ```
+Another way we can do this with higher order functions is like so..
 ```javascript
 function pluralize(array,callback){
   //Create a newArr 
@@ -186,6 +187,7 @@ function addS(str){
 }
 console.log(pluralize(fruits,addS))
 ```
+Extra practice utilizing this strategy create a function that takes in a callback function and multiplies each number in the array by 2.
 ```javascript
 function timesTwo(num){
   return num*2;
@@ -210,29 +212,66 @@ console.log(multiply(numbers,timesTwo))
 ```
 ___
 ### `Challenge: map`
-Create a function pluralize that takes an array of strings as input and returns a new array with an "s" added to the end of each string in the input array. For example, if the string "carrot" is in the input array, it should become the string "carrots" in the output array.
+Create a function subtractTwo that accepts a number and returns that number minus 2.
 
-The body of the pluralize function should employ a single for loop that pluralizes each string in the input array..
+Then create a function map that takes two inputs - an array of numbers (a list of numbers) a 'callback' function - this function is applied to each element of the array (inside of the function 'map')
+Have your map function return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array. Please do not use the native map or forEach method.
 ``` javascript
-//input - array
+//input - array and callback function
 //output - new array
-function pluralize(arr){
+function subtractTwo(num){
+  return num - 2;
+}
+function map(array,callback){
   //create new array
-  const output = [];
-  //iterate through loop
-  for (let i = 0; i<arr.length; i++){
-  //add s to each element and push to new array
-  	const element = arr[i] + 's';
-  	output.push(element);
-  //return new array
+  const output = []
+  //iterate through passed in array
+  for (let i=0; i<array.length;i++){
+    const twos = callback(array[i]);
+    output.push(twos);
   }
+  //run callback on each element in the array
+  //push to new array
+  //return new array
   return output;
 }
-// Uncomment these to check your work!
-const animals = ["dog", "cat", "tree frog"];
-console.log(pluralize(animals)); // should log: ["dogs", "cats", "tree frogs"]
-```
 
+//Uncomment these to check your work!
+console.log(typeof subtractTwo); // should log: 'function'
+console.log(typeof map); // should log: 'function'
+console.log(map([3,4,5], subtractTwo)); // should log: [ 1, 2, 3 ]
+```
+___
+### `Challenge: forEach`
+#### Part 1
+Create a function forEach which takes an array and a callback, and runs the callback on each element of the array. forEach does not return anything. Please do not use the native forEach or map method.
+#### Part 2
+Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created.
+``` javascript
+//input - array and callback function
+//output - new array
+function subtractTwo(num){
+  return num - 2;
+}
+function map(array,callback){
+  //create new array
+  const output = []
+  //iterate through passed in array
+  for (let i=0; i<array.length;i++){
+    const twos = callback(array[i]);
+    output.push(twos);
+  }
+  //run callback on each element in the array
+  //push to new array
+  //return new array
+  return output;
+}
+
+//Uncomment these to check your work!
+console.log(typeof subtractTwo); // should log: 'function'
+console.log(typeof map); // should log: 'function'
+console.log(map([3,4,5], subtractTwo)); // should log: [ 1, 2, 3 ]
+```
 
 
 
