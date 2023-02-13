@@ -248,29 +248,30 @@ Create a function forEach which takes an array and a callback, and runs the call
 #### Part 2
 Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created.
 ``` javascript
-//input - array and callback function
-//output - new array
-function subtractTwo(num){
-  return num - 2;
-}
-function map(array,callback){
-  //create new array
-  const output = []
-  //iterate through passed in array
+function forEach(array, callback){
+  //iterate over the array
   for (let i=0; i<array.length;i++){
-    const twos = callback(array[i]);
-    output.push(twos);
+    //run callback function on each element
+    let element = array[i]
+    callback(element)
   }
-  //run callback on each element in the array
-  //push to new array
-  //return new array
-  return output;
 }
 
-//Uncomment these to check your work!
-console.log(typeof subtractTwo); // should log: 'function'
+function map(array, callback){
+  //create new array
+  let output = [];
+  //iterate over array
+  forEach(array,function(element){
+    let result = callback(element);
+    output.push(result);
+  })
+  return output;
+}
+// Uncomment these to check your work!
+console.log(typeof forEach); // should log: 'function'
+forEach(['a','b','c'], i => console.log(i)); // should log: 'a', 'b', 'c'
 console.log(typeof map); // should log: 'function'
-console.log(map([3,4,5], subtractTwo)); // should log: [ 1, 2, 3 ]
+console.log(map([3,4,5], n => n - 2)); // should log: [1, 2, 3]
 ```
 
 
