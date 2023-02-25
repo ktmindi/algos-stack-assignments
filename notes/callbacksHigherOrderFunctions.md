@@ -345,7 +345,42 @@ const over100 = n => n > 100;
 const intSqRtOrOver100 = eitherCallback(integerSquareRoot, over100);
 console.log(filterArray(arrOfNums, intSqRtOrOver100)); // should log: [105, 9]
 ```
+---
+### `Challenge: reduce`
+The function reduce takes an array and reduces the elements to a single value.
 
+The reduce function loops through the array and applies any operation that you can put into a function to each element in the array while keeping track of the outcome of each loop. In this way, we could use reduce to do things like sum all the numbers in an array or multiply them all together.
+
+Here's how it works:
+
+The function has an "accumulator value". Its job is to keep track of the accumulated output of each loop. It starts out equal to the initialValue.
+The array is iterated over, passing the accumulator and the next array element as arguments to the callback.
+The callback's return value becomes the new accumulator value.
+The next loop executes with this new accumulator value.
+In the example above, the accumulator begins at 0. add(0,4) is called. The accumulator's value is now 4. Then add(4, 1) makes it 5. Finally add(5, 3) brings it to 8, which is returned.
+
+Construct your own reduce function that accepts an array, a callback, and an initial value and returns a single value.
+``` javascript
+function eitherCallback(callback1, callback2) {
+  return(element, i, array) => {
+    return callback1(element) || callback2(element);
+  }
+}
+
+// Uncomment these to check your work!
+function filterArray(array, callback) {
+  const newArray = [];
+  for (let i = 0; i < array.length; i += 1) {
+    if (callback(array[i], i, array)) newArray.push(array[i]);
+  }
+  return newArray;
+}
+const arrOfNums = [10, 35, 105, 9];
+const integerSquareRoot = n => Math.sqrt(n) % 1 === 0;
+const over100 = n => n > 100;
+const intSqRtOrOver100 = eitherCallback(integerSquareRoot, over100);
+console.log(filterArray(arrOfNums, intSqRtOrOver100)); // should log: [105, 9]
+```
 
 
 
