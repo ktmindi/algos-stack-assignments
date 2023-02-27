@@ -381,7 +381,12 @@ const over100 = n => n > 100;
 const intSqRtOrOver100 = eitherCallback(integerSquareRoot, over100);
 console.log(filterArray(arrOfNums, intSqRtOrOver100)); // should log: [105, 9]
 ```
+---
+### `Challenge: intersection`
 
+Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. BONUS - Use reduce!
+```javascript
+```
 
 
 
