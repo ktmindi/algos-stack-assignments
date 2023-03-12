@@ -97,7 +97,43 @@ console.log("10" + "5"); // 105
 console.log("10" + 5); // 105
 console.log(10 + 5); // 15
 ```
+// Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+/**
+ * Set - Frequency Counter
+ * Time O(NlogN) | Space O(N)
+ * https://leetcode.com/problems/top-k-frequent-elements/
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
 
+const topKFrequent = (nums,k) => {
+  const cache = {};
+  // Iterate array putting elements into a hash 
+  for(let i =0;i<nums.length;i++){
+    if(!cache[nums[i]]){
+      cache[nums[i]] = 1;
+    }else{
+      cache[nums[i]] +=1; 
+    }
+  }
+  // Map over the object keys, with new array sub arrays 
+  const map = Object.keys(cache).map((key)=> [Number(key), cache[key]])
+  // Sort the sub arrays 
+  const sortedMap = map.sort( (a,b) => b[1]-a[1])
+  // Create a output array 
+  let output = [];
+  // Iterate until k , pushing into output array
+  for(let i = 0;i<k;i++){
+    output.push(sortedMap[i][0])
+  }
+  // Return the output array 
+  return output;
+}
+
+
+console.log(topKFrequent([ 100, 100, 100, 200, 200, 300 ], 2)) // => [100,200]
+console.log(topKFrequent([ 1 ], 1))// =>[ 1 ]
 
 ### H3
 ## H2
