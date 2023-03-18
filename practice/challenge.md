@@ -371,3 +371,48 @@ for (let i = 0; i < 5; i++) {
 
 - Write a function countMost that uses a for loop to loop over the numbers 1 to 5.
 - Log all the numbers except 3.
+
+
+const mergeSort = (arr)  => {
+  if(arr.length === 1){
+    return arr;
+  }
+  let mid = Math.floor(arr.length /2);
+  let left = mergeSort(arr.slice(0,mid))
+  let right = mergeSort(arr.slice(mid));
+  return merge(left,right);
+}
+
+// Helper function
+
+const merge = (arr1,arr2) => {
+  let combined = [];
+  let i = 0;
+  let j = 0;
+while(i < arr1.length && j <arr2.length){
+  if(arr1[i] < arr2[j]){
+    combined.push(arr1[i]);
+    i++;
+  }else{
+    combined.push(arr2[j]);
+    j++;
+  }
+}
+  while( i< arr1.length){
+    combined.push(arr1[i]);
+    i++;
+  }
+  while(j < arr2.length){
+    combined.push(arr2[j]);
+    j++;
+  }
+  return combined;
+  
+}
+
+// Space Complexity: O(n)
+// Time Complexity: Breaking apart is O(log n)
+// Putting together is O(n)
+// O(n log n )
+
+console.log(mergeSort([ 10, 4, 42, 5, 8, 100, 5, 6, 12, 40 ]))// => [4,5,5,]
